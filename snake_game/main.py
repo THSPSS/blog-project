@@ -9,7 +9,7 @@ screen = Screen()
 screen.setup(width=600,height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game")
-screen.tracer(0)    #tracer : turn turtle animation on/off and set delay for update drawings it means tracing is off?
+screen.tracer(2)    #tracer : turn turtle animation on/off and set delay for update drawings it means tracing is off?
 
 
 snake = Snake()
@@ -26,12 +26,12 @@ screen.onkey(snake.right,"Right")
 game_is_on = True
 while game_is_on:
     screen.update() #Perform a turtlescreen update. To be used when tracer is turned off.
-    time.sleep(0.1)  # suspends execution for the given number of seconds. it means stop program for 0.1 moment
+    time.sleep(0.2)  # suspends execution for the given number of seconds. it means stop program for 0.1 moment
 
     snake.move()
 
     #Detect collision with food.
-    if snake.head.distance(food) < 15: #if turtle is get to food its distance become refresh
+    if snake.head.distance(food) < 15: #if turtle have a food, its position updated
         food.refresh()
         snake.extend()
         scoreboard.increase_score()
@@ -44,7 +44,7 @@ while game_is_on:
 
     #Detect collistion with tail.
     for segment in snake.segments[1:]:
-        if snake.head.distance(segment) < 10:
+        if snake.head.distance(segment) < 15:
             game_is_on = False
             scoreboard.game_over()
 

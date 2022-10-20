@@ -1,0 +1,20 @@
+h1 {
+    color: red;
+}
+
+img:hover {
+    background-color : gold;
+}
+
+.emojidex-emoji {
+    background : red;
+}
+
+
+.broccoli {
+    background : green
+}
+
+.circular {
+    border-radius : 50%;
+}
